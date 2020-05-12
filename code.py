@@ -1,15 +1,13 @@
-# so first lets start outline 
-
-# a project that reminds people to log after every hour their ouptur for the past hour 
-
-
 import sched
 import time
+import datetime
+import csv
 
-# a project that reminds people to log after every hour
+# reminds people to log after every hour and give work done
 
 log_tasks = []
 productive_hours = []
+
 def log_asker():
 	try:
 		print("what's your output for the last hour? :")
@@ -57,11 +55,24 @@ def running_for_hours():
 	except ValueError:
 		print("please give a number")
 
-
-# gives an hourly (csv) log of user inputs
-
-#outputs
+# calling function 
 
 running_for_hours()
+
 print(log_tasks)
 print(productive_hours)
+
+#gives an hourly (csv) log of user inputs , used for further analysis
+
+date = datetime.date.today()
+
+f = open("productivity report for %s.csv"%(date),"w")
+writer = csv.writer(f,delimiter=',',quotechar='"', quoting=csv.QUOTE_MINIMAL)
+writer.writerow(log_tasks)
+writer.writerow(productive_hours)
+
+f.close()
+
+
+
+
