@@ -2,6 +2,7 @@ import sched
 import time
 import datetime
 import csv
+from tkinter import *
 
 # reminds people to log after every hour and give work done
 
@@ -39,7 +40,18 @@ def productive_checker():
 					print("DO if other stuff come to mind add to distraction list\n")
 	productive_hours.append(answer)
 
+# pop up message for updates 
 
+def hour_pop():
+	remind_pop = Tk()
+	remind_pop.attributes("-topmost", True)
+	remind_pop.geometry("250x250")
+	remind_pop.title("Update inputs")
+	Label(remind_pop,text = "Please Update all the values").pack()
+	close = Button(remind_pop,text="OK",command=remind_pop.destroy)
+	close.pack()
+	remind_pop.mainloop()
+	
 # scheduling evry hour for the user required time frame 
 
 def running_for_hours():
@@ -48,6 +60,7 @@ def running_for_hours():
 		counter = 1
 		while counter <= hours:
 			time.sleep(3600)# change to 3600 for every hour 
+			hour_pop()
 			log_asker()
 			productive_checker()
 			counter+=1
@@ -71,7 +84,6 @@ writer.writerow(log_tasks)
 writer.writerow(productive_hours)
 
 f.close()
-
 
 
 
