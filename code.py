@@ -10,8 +10,7 @@ productive_hours = []
 
 def log_asker():
 	try:
-		print("what's your output for the last hour? :")
-		past_hour = input()
+		past_hour = input("what's your output for the last hour? :")
 		log_tasks.append(past_hour)
 	except ValueError:
 		print("please give a proper answer")
@@ -45,10 +44,10 @@ def productive_checker():
 
 def running_for_hours():
 	try:
-		hours = int(input("How many hours of work?"))
+		hours = int(input("How many hours of work? : "))
 		counter = 1
 		while counter <= hours:
-			time.sleep(1)# change to 3600 for every hour 
+			time.sleep(3600)# change to 3600 for every hour 
 			log_asker()
 			productive_checker()
 			counter+=1
@@ -62,7 +61,7 @@ running_for_hours()
 print(log_tasks)
 print(productive_hours)
 
-#gives an hourly (csv) log of user inputs , used for further analysis
+#gives an hourly (csv) log of user inputs , used for further analysis 
 
 date = datetime.date.today()
 
