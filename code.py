@@ -26,16 +26,20 @@ def productive_checker():
 	answer = "sample"
 	while (answer!= "yes" and answer!= "no"):
 		answer = input("were you productivity? :")
+		# tips if needed by user
 		if answer == "no":
-			tips = input("do you wish to review productivity tips ? :")
-			if tips == "yes":
-				print("DO Just Start\n")	
-				print("DO set a hard deadline for tasks\n")							
-				print("DONT think its a small task will do it later\n")
-				print("DO if cravings , breathe and be in control\n")
-				print("DO list down all tasks (DONT be intimidated)\n")
-				print("DO Pomodoro Technique\n")
-				print("DO if other stuff comed to mind add to distraction list\n")
+			tips = "sample"
+			while (tips!= "yes" and tips!= "no"):
+				tips = input("do you wish to review productivity tips ? :")
+				if tips == "yes":
+					print("\n")
+					print("DO Just Start\n")	
+					print("DO set a hard deadline for tasks\n")							
+					print("DONT think its a small task will do it later\n")
+					print("DO if cravings , breathe and be in control\n")
+					print("DO list down all tasks (DONT be intimidated)\n")
+					print("DO Pomodoro Technique\n")
+					print("DO if other stuff come to mind add to distraction list\n")
 	productive_hours.append(answer)
 
 
@@ -52,9 +56,6 @@ def running_for_hours():
 			counter+=1
 	except ValueError:
 		print("please give a number")
-
-# gives them tips for productivity 
-
 
 
 # gives an hourly (csv) log of user inputs
