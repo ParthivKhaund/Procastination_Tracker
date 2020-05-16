@@ -1,0 +1,11 @@
+# to do
+
+# improve UI (grid)
+
+# for hours do a thing that closes window after given hours and gives a message 
+
+# convert to 30 minutes 
+
+# from csv go to pickle 
+
+# once button has been pressed see that text is wiped 
