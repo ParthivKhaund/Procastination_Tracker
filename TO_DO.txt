@@ -2,6 +2,8 @@
 
 # improve UI (grid)
 
+# instead of user input have a drop down menue to select from
+
 # for hours do a thing that closes window after given hours and gives a message 
 
 # convert to 30 minutes 
